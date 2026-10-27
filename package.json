@@ -1,0 +1,37 @@
+{
+  "name": "openclaw-skill-bridge",
+  "version": "0.1.0",
+  "description": "DSH (DeepSeek Harness) skill provider that maps OpenClaw skills into the DSH skill catalog.",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": "./lib/index.js",
+    "./translate": "./lib/translate.js"
+  },
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "yaml": "^2.9.1"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.5",
+    "@deepseek-ai/dsh-skill": "^0.0.1-rc.1",
+    "@deepseek-ai/schemastery": "^3.18.5"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.5",
+    "@deepseek-ai/dsh-skill": "^0.0.1-rc.1",
+    "@deepseek-ai/schemastery": "^3.18.5",
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test test/translate.test.mjs",
+    "prepublishOnly": "npm run build"
+  }
+}
